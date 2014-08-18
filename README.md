@@ -1,4 +1,4 @@
 DefenseoftheShrines
 ===================
 
-Touhou Doujin game
+Touhou Doujinsoft
