@@ -1,0 +1,26 @@
+Vertical Map
+-rotate perspective 180 degrees for each team?
+--probably
+
+Locked Camera
+-Make it unlock when they focus?
+
+Controls: Mouse or Keyboard?
+-Leaning toward mouse to make game more interactive i.e. aimable skillshots
+-Abilities: 2 or 3 + ulti. 2 might feel a little better control-wise, but 3 is probably better for the health of the game
+
+Patterns
+-Cone that spawns random small bullets within
+--talked about how make the patterns semi-randomized may help emphasize and keep fresh the pattern dodging component
+--Make it so that the really complex danmakus require team cooperation
+---Implicit vs. Explicit danmaku synergies
+----implicit ie two champions stacking their abilities to make an undogable
+----explicit ie when these two spells are cast together, they get a bonus
+-----Tet also poitned out that osme champions could have "support" abilities that empower other champs attacks
+-Should ults be like bombs, including having a bullet clear effect?
+--still undecided for now
+
+Health vs. Instadeath
+-Heath would make it more on-par with most MOBAs.  May be possible to make the game mechanics somehow empower Instadeath
+
+To keep last hitting in the game, make it that when a minion is lasthit it should explode into bullets
