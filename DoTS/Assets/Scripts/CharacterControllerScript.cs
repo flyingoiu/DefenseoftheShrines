@@ -3,8 +3,11 @@ using System.Collections;
 
 public class CharacterControllerScript : MonoBehaviour {
 
-	public float maxSpeed = .5f;
+	public float maxSpeed = 1;
+	public float focusreduction = 0.5f;
 	bool facingUp = true;
+	bool moving = false;
+	bool focus = false;
 
 	Animator anim;
 
@@ -21,21 +24,54 @@ public class CharacterControllerScript : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
+		float moveHorizontal = Input.GetAxisRaw ("Horizontal");
+		float moveVertical = Input.GetAxisRaw ("Vertical");
 
-		float moveHorizontal = Input.GetAxis ("Horizontal");
-		float moveVertical = Input.GetAxis ("Vertical");
+		if (Input.GetKey ("left shift"))
+						focus = true;
+				else
+						focus = false;
 
-		anim.SetFloat ("hSpeed", Mathf.Abs (moveHorizontal));
-		anim.SetFloat ("vSpeed", Mathf.Abs (moveVertical));
 
-		rigidbody2D.velocity = new Vector2 (moveHorizontal * maxSpeed,moveVertical * maxSpeed);
 
-		if (moveVertical > 0 && !facingUp)
+		//print (focus);
+
+		float focusmultiplier = (focus)?(focusreduction) : (1.0f);
+
+		//all orthogonal movementspeed calculations should go here.  may want to consolidate into a single speed stat and then copy to both
+		float horizontalspeed = moveHorizontal * maxSpeed * focusmultiplier;
+		float verticalspeed   = moveVertical   * maxSpeed * focusmultiplier;
+
+
+
+		if (horizontalspeed != 0 || verticalspeed != 0) {
+			moving = true;
+			anim.SetBool ("moving", moving);		
+
+		} else {
+			moving = false;
+			anim.SetBool ("moving", moving);	
+		}
+
+		//print (moving);
+
+		//to keep diagonal movement same speed as orthogonal
+		if(moveHorizontal!=0 && moveVertical !=0)
+		{
+			horizontalspeed = horizontalspeed/Mathf.Sqrt(2);
+			verticalspeed = verticalspeed/Mathf.Sqrt(2);	
+		}
+
+		print (horizontalspeed + ", " + verticalspeed);
+		rigidbody2D.velocity = new Vector2 (horizontalspeed, verticalspeed);
+
+		if (moveVertical > 0 && !facingUp && !focus)
 						Flip ();
-				else if (moveVertical < 0 && facingUp)
+				else if (moveVertical < 0 && facingUp & !focus)
 						Flip ();
 
 	
+
 	}
 
 	void Update()
