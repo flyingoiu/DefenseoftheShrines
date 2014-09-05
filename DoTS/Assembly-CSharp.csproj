@@ -46,8 +46,11 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Amulet.cs" />
+     <Compile Include="Assets\ChampionStatistics.cs" />
      <Compile Include="Assets\Scripts\CameraScript.cs" />
      <Compile Include="Assets\Scripts\CharacterControllerScript.cs" />
+     <Compile Include="Assets\Scripts\Mover.cs" />
      <Compile Include="Assets\Scripts\TowerControllerScript.cs" />
   </ItemGroup>
   <ItemGroup>

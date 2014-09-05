@@ -9,6 +9,11 @@ public class CharacterControllerScript : MonoBehaviour {
 	bool moving = false;
 	bool focus = false;
 
+	public GameObject shot;
+	public Transform shotSpawn;
+	public float fireRate;
+	private float nextFire;
+
 	Animator anim;
 
 	//this might come in handy for 4-direction rotation, but we may just skip to 360 degree orientation
@@ -81,6 +86,15 @@ public class CharacterControllerScript : MonoBehaviour {
 
 		//nice way to do forces for knockbacks, nb
 		//rigidbody2D.AddForce(new Vector2(x,y));
+
+		if (Input.GetButton ("Fire2") && Time.time > nextFire) {
+						
+			nextFire = Time.time + fireRate;
+			//GameObject clone = 
+			Instantiate (shot, shotSpawn.position, shotSpawn.rotation);// as GameObject; 
+		
+		}
+
 
 	}
 
