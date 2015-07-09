@@ -32,7 +32,7 @@ public class CameraScript : MonoBehaviour {
 						else 
 								transform.position = new Vector3 (target.transform.position.x, target.transform.position.y, -10);
 				} else
-						rigidbody2D.velocity = Vector2.zero;
+						GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
 
 
@@ -42,9 +42,9 @@ public class CameraScript : MonoBehaviour {
 	void SmoothPan()
 	{
 
-		Vector2 smoother = (target.transform.position - rigidbody2D.transform.position)*5;
+		Vector2 smoother = (target.transform.position - GetComponent<Rigidbody2D>().transform.position)*5;
 
-		rigidbody2D.velocity = smoother;
+		GetComponent<Rigidbody2D>().velocity = smoother;
 
 	}
 }

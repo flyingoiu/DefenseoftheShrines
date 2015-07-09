@@ -67,8 +67,8 @@ public class CharacterControllerScript : MonoBehaviour {
 			verticalspeed = verticalspeed/Mathf.Sqrt(2);	
 		}
 
-		print (horizontalspeed + ", " + verticalspeed);
-		rigidbody2D.velocity = new Vector2 (horizontalspeed, verticalspeed);
+		//print (horizontalspeed + ", " + verticalspeed);
+		GetComponent<Rigidbody2D>().velocity = new Vector2 (horizontalspeed, verticalspeed);
 
 		if (moveVertical > 0 && !facingUp && !focus)
 						Flip ();
