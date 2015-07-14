@@ -1,0 +1,5 @@
+start program
+say something
+if nothing happens
+go to 2
+halt and catch fire
