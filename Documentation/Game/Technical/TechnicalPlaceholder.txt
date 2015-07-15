@@ -1,0 +1,3 @@
+This folder will eventually contain technical documentation.
+For example, a UML diagram.
+Or the auto-generated XML documentation.

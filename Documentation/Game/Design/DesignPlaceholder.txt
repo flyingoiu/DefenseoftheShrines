@@ -1,0 +1,4 @@
+Formal and informal design documents go here.
+If we ever do a formal writeup, great.
+But for now, feel free to put any scribblings, brainstorming, 
+idea webs, etc here so we don't forget about them.
